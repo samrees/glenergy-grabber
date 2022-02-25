@@ -10,6 +10,7 @@ profile = Selenium::WebDriver::Firefox::Profile.new.tap do |p|
 end
 
 options = Selenium::WebDriver::Firefox::Options.new(profile: profile)
+options.headless!
 driver = Selenium::WebDriver.for :firefox, capabilities: options
 driver.manage.timeouts.implicit_wait = 5
 wait = Selenium::WebDriver::Wait.new(timeout: 60)
